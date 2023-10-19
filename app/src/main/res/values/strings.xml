@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Blue way</string>
+    <string name="button1">지하철 알람</string>
+    <string name="button2">내릴 역 공유</string>
+    <string name="regi">"탑승 열차 등록</string>
+    <string name="end">도착역 등록</string>
+    <string name="howmanystation">도착 알람 설정</string>
+    <string name="about">정거장 전</string>
+    <string name="arrive">도착 완료</string>
+    <string name="finish">알람 종료</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
