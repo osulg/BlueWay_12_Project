@@ -3,58 +3,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_select"
     tools:context="Fragment.select">
 
+    <FrameLayout
+        android:id="@+id/imageView27"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="284dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/button1"
-        android:textSize="24dp"
+        android:textSize="25dp"
+        android:textColor="@color/Blue_0253A5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.163"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/button1" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="74dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="412dp"
+        android:id="@+id/textViewShare"
+        android:textSize="25dp"
+        android:textColor="@color/Blue_0253A5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
         android:text="@string/button2"
-        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"/>
 
     <ImageView
-        android:id="@+id/imageView26"
+        android:id="@+id/imageViewAlarm"
         android:layout_width="130dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="289dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginBottom="32dp"
-        android:src="@drawable/clock"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="100dp"
+        android:src="@drawable/baseline_access_alarm_24"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAlarm"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewAlarm"
+        app:layout_constraintRight_toRightOf="@+id/textViewAlarm"
+
+
+        />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewShare"
         android:layout_width="130dp"
-        android:layout_height="91dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="289dp"
-        android:src="@drawable/run"
-        app:layout_constraintStart_toEndOf="@+id/imageView26"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="100dp"
+        android:src="@drawable/baseline_directions_run_24"
+        app:layout_constraintBottom_toTopOf="@+id/textViewShare"
+        app:layout_constraintLeft_toLeftOf="@+id/textViewShare"
+        app:layout_constraintRight_toRightOf="@+id/textViewShare"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

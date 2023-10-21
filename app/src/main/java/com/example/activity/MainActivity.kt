@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.imageView26, fragment1)
             .commit()
 
+        val fragment2 = select()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.imageView27, fragment2)
+            .commit()
+
+
         /*val fragment2 = select()
         supportFragmentManager.beginTransaction()
             .replace(R.id.imageView, fragment2)

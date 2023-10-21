@@ -8,6 +8,7 @@
     <string name="about">정거장 전</string>
     <string name="arrive">도착 완료</string>
     <string name="finish">알람 종료</string>
+    <string name="app_name_larger">BLUEWAY</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
