@@ -1,5 +1,6 @@
 package com.example.activity
 
+import Fragment.alarm
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +10,26 @@ class Sub13Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub13)
+
+        val transaction = supportFragmentManager.beginTransaction()
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.sub12frame)
+        if (currentFragment != null) {
+            transaction.remove(alarm())
+
+            // fragment
+            val fragment13 = alarm()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.sub13frame, fragment13)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        /*// fragment
+        val fragment13 = alarm()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.sub13frame, fragment13)
+            .addToBackStack(null)
+            .commit()*/
 
         //Sub12 Back
         val btn_bsub12: Button =findViewById(R.id.btn_bsub12)

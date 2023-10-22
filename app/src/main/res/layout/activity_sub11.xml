@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Sub11Activity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/sub11frame"
+        android:name="Fragment.alarmDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_alarm_detail" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -20,9 +29,11 @@
         android:id="@+id/btn_bsub1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="39dp"
         android:text="Back to Sub1"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="39dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_sub12"

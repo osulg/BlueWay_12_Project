@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Sub14Activity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/sub14frame"
+        android:name="Fragment.waiting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_waiting" />
+
     <Button
         android:id="@+id/btn_bsub13"
         android:layout_width="wrap_content"

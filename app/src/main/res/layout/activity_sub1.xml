@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Sub1Activity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/sub1frame"
+        android:name="Fragment.alarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_alarm" />
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

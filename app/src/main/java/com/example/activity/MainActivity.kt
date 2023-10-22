@@ -17,15 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragment1 = select()
+        val fragment = select()
         supportFragmentManager.beginTransaction()
-            .replace(R.id.imageView26, fragment1)
+            .replace(R.id.imageView26, fragment)
             .commit()
 
-        val fragment2 = select()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.imageView27, fragment2)
-            .commit()
 
 
         /*val fragment2 = select()

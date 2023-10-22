@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Sub2Activity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/sub2frame"
+        android:name="Fragment.alarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_alarm" />
+
     <Button
         android:id="@+id/btn_bmain1"
         android:layout_width="wrap_content"

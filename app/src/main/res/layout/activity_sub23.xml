@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Sub23Activity">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/sub23frame"
+        android:name="Fragment.finishalarm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_finishalarm" />
+
     <Button
         android:id="@+id/btn_bsub22"
         android:layout_width="wrap_content"
