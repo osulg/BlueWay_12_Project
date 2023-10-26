@@ -5,9 +5,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.selects.select
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
     //private lateinit var viewModel: viewModel1
@@ -22,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.imageView26, fragment)
             .commit()
 
+        thread {
+            val result=main()
+            runOnUiThread{ Toast.makeText(this@MainActivity, "API 샘플 테스트:${result}", Toast.LENGTH_LONG).show()}
+        }
 
 
         /*val fragment2 = select()

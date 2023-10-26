@@ -21,7 +21,7 @@ class Sub1Activity : AppCompatActivity() {
             .commit()
 
         //Main Back
-        val btn_bmain: Button =findViewById(R.id.btn_bmain)
+        val btn_bmain: Button =findViewById(R.id.imageViewArrow)
         btn_bmain.setOnClickListener {
             finish()
         }
