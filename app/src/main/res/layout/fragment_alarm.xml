@@ -39,54 +39,58 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView20"
-        android:layout_width="wrap_content"
-        android:layout_height="619dp"
-        android:src="@drawable/list"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stationchoice"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="195dp" />
+
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="781dp"
-        android:src="@drawable/list"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stationchoice"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="254dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="482dp"
-        android:src="@drawable/list"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stationchoice"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="376dp" />
 
     <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="wrap_content"
-        android:layout_height="1113dp"
-        android:src="@drawable/list"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stationchoice"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="312dp" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="936dp"
-        android:src="@drawable/list"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stationchoice"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="434dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stationchoice"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="498dp" />
 
     <ImageView
         android:id="@+id/imageView22"
         android:layout_width="0dp"
         android:layout_height="63dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="148dp"
         android:layout_marginEnd="13dp"
         android:src="@drawable/baseline_search_24"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
