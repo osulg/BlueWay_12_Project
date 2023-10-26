@@ -2,9 +2,9 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/Blue_0253A5"/>
 
-    <item android:drawable="@drawable/main_splash"
+    <item android:drawable="@drawable/subway"
         android:gravity="center"
-        android:width="100dp"
-        android:height="110dp"/>
+        android:width="73dp"
+        android:height="73dp"/>
 
 </layer-list>
