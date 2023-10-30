@@ -38,21 +38,21 @@ class Sub12Activity : AppCompatActivity() {
         }
 
         // Sub13 Go1
-        val btn_select1:Button=findViewById(R.id.btn_select1)
+        val btn_select1:Button=findViewById(R.id.firstButton)
         btn_select1.setOnClickListener {
             val intent = Intent(this,Sub13Activity::class.java)
             startActivity(intent)
         }
 
         // Sub13 Go2
-        val btn_select2:Button=findViewById(R.id.btn_select2)
+        val btn_select2:Button=findViewById(R.id.secondButton)
         btn_select2.setOnClickListener {
             val intent = Intent(this,Sub13Activity::class.java)
             startActivity(intent)
         }
 
         // Sub13 Go3
-        val btn_select3:Button=findViewById(R.id.btn_select3)
+        val btn_select3:Button=findViewById(R.id.thirdButton)
         btn_select3.setOnClickListener {
             val intent = Intent(this,Sub13Activity::class.java)
             startActivity(intent)

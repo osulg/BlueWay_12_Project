@@ -6,14 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".Sub13Activity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/sub13frame"
-        android:name="Fragment.alarmDetail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewArrow1"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_alarm_detail" />
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewRefresh"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="1"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewAlarm"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_access_alarm_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"/>
 
     <Button
         android:id="@+id/btn_bsub12"
@@ -29,24 +67,155 @@
         app:layout_constraintHorizontal_bias="0"/>
 
     <Button
-        android:id="@+id/btn_sub14s"
+        android:id="@+id/ButtonRefresh"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="1"
+        android:background="@null"/>
+
+    <TextView
+        android:id="@+id/textViewResgister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:text="sound"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_sub14v"
-        app:layout_constraintEnd_toStartOf="@+id/btn_sub14v"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="sans-serif-black"
+        android:text="소리 / 진동 선택"
+        android:textSize="24sp"
+        android:layout_margin="35dp"
+        android:textColor="@color/Blue_0253A5"
+        app:layout_constraintBottom_toTopOf="@id/none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0"
+        />
+
+    <ImageView
+        android:src="@drawable/soundicon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@color/Blue_0253A5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"
+
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@color/Blue_0253A5"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"
+        />
+
+    <ImageView
+        android:src="@drawable/vibrationicon"
+        android:layout_width="150sp"
+        android:layout_height="200sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_sub14v"
+        app:layout_constraintEnd_toEndOf="@id/btn_sub14v"
+        app:layout_constraintStart_toStartOf="@id/btn_sub14v"
+        app:layout_constraintTop_toTopOf="@id/btn_sub14v"
+        app:layout_constraintVertical_bias="0.5"
+        />
+
 
     <Button
         android:id="@+id/btn_sub14v"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="284dp"
-        android:text="vibration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@null"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn" />
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"
+        />
+
+    <Button
+        android:id="@+id/btn_sub14s"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@null"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="소리"
+        android:textSize="25sp"
+        android:textColor="@color/Blue_0253A5"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_sub14s"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_sub14s"
+        app:layout_constraintRight_toRightOf="@+id/btn_sub14s"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="진동"
+        android:textSize="25sp"
+        android:textColor="@color/Blue_0253A5"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_sub14v"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_sub14v"
+        app:layout_constraintRight_toRightOf="@+id/btn_sub14v"
+
+        />
+
+    <ImageView
+        android:id="@+id/none"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.01"
+        android:background="@null"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
