@@ -15,13 +15,45 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_finishalarm" />
 
-    <Button
-        android:id="@+id/btn_bmain2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="211dp"
-        android:text="Back to Main"
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/baseline_circle_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1"
+        app:tint="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/howManyNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도착 완료"
+        android:textSize="60dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/Blue_0253A5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/btn_bmain2"
+        android:background="@color/white"
+        android:text="알람 종료"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:textColor="@color/Blue_0253A5"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView24"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
