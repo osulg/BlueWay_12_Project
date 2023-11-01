@@ -1,5 +1,6 @@
 package com.example.activity
 
+import android.widget.Button
 import com.google.gson.JsonParser
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -9,6 +10,7 @@ import java.net.URLEncoder
 
 fun main(): String? {
 
+    var station="서울"
     val urlBuilder = StringBuilder("http://swopenAPI.seoul.go.kr/api/subway/") /*URL*/
     urlBuilder.append(
         "/" + URLEncoder.encode(
@@ -26,14 +28,14 @@ fun main(): String? {
     urlBuilder.append("/" + URLEncoder.encode("0", "UTF-8")) /*요청시작위치 (sample인증키 사용시 5이내 숫자)*/
     urlBuilder.append(
         "/" + URLEncoder.encode(
-            "2",
+            "10",
             "UTF-8"
         )
     ) /*요청종료위치(sample인증키 사용시 5이상 숫자 선택 안 됨)*/
     // 상위 5개는 필수적으로 순서바꾸지 않고 호출해야 합니다.
 
     // 서비스별 추가 요청 인자이며 자세한 내용은 각 서비스별 '요청인자'부분에 자세히 나와 있습니다.
-    urlBuilder.append("/" + URLEncoder.encode("서울", "UTF-8")) /* 서비스별 추가 요청인자들 */
+    urlBuilder.append("/" + URLEncoder.encode("${station}", "UTF-8")) /* 서비스별 추가 요청인자들 */
     val url = URL(urlBuilder.toString())
     val conn = url.openConnection() as HttpURLConnection
     conn.requestMethod = "GET"

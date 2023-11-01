@@ -7,6 +7,9 @@ android {
     namespace = "com.example.activity"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId = "com.example.activity"
         minSdk = 24

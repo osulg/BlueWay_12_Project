@@ -5,13 +5,34 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
+import com.example.activity.databinding.ActivitySub11Binding
+import com.example.activity.databinding.ActivitySub1Binding
+import kotlin.concurrent.thread
+
 
 class Sub1Activity : AppCompatActivity() {
+
+    private var mBinding:ActivitySub1Binding?=null
+    private val binding get()=mBinding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sub1)
+        mBinding=ActivitySub1Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
+        //search
+        thread {
+            val result_station=main()
+
+            val btn_search:Button=findViewById(R.id.imageViewSearchButton)
+
+            btn_search.setOnClickListener{
+                val stationId=binding.searchStation.text.toString()
+                runOnUiThread{ Toast.makeText(this@Sub1Activity, "{$stationId}", Toast.LENGTH_LONG).show()}
+            }
+
+        }
 
         // fragment
         val fragment1 = alarm()
