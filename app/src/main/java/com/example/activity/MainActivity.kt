@@ -24,10 +24,10 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.imageView26, fragment)
             .commit()
 
-        thread {
-            val result=main()
-            runOnUiThread{ Toast.makeText(this@MainActivity, "API 샘플 테스트:${result}", Toast.LENGTH_LONG).show()}
-        }
+//        thread {
+//            val result=main()
+//            runOnUiThread{ Toast.makeText(this@MainActivity, "API 샘플 테스트:${result}", Toast.LENGTH_LONG).show()}
+//        }
 
 
         /*val fragment2 = select()

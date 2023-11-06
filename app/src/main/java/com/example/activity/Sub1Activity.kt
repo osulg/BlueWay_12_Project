@@ -22,16 +22,14 @@ class Sub1Activity : AppCompatActivity() {
 
 
         //search
-        thread {
-            val result_station=main()
+        val btn_search:Button=findViewById(R.id.imageViewSearchButton)
 
-            val btn_search:Button=findViewById(R.id.imageViewSearchButton)
-
-            btn_search.setOnClickListener{
-                val stationId=binding.searchStation.text.toString()
-                runOnUiThread{ Toast.makeText(this@Sub1Activity, "{$stationId}", Toast.LENGTH_LONG).show()}
+        btn_search.setOnClickListener{
+            val stationId=binding.searchStation.text.toString()
+            thread {
+                var resultId=main(stationId)
+                runOnUiThread{ Toast.makeText(this@Sub1Activity, resultId, Toast.LENGTH_LONG).show()}
             }
-
         }
 
         // fragment

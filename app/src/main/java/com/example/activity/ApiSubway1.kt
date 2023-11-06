@@ -8,9 +8,9 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 
-fun main(): String? {
+fun main(stationId:String): String? {
 
-    var station="서울"
+    var station=stationId
     val urlBuilder = StringBuilder("http://swopenAPI.seoul.go.kr/api/subway/") /*URL*/
     urlBuilder.append(
         "/" + URLEncoder.encode(
