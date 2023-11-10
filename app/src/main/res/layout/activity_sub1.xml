@@ -33,19 +33,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
 
-    <Button
-        android:id="@+id/btn_sub11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="143dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginBottom="187dp"
-        android:text="Go to sub11"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/imageViewAlarm"
         android:layout_width="130dp"
@@ -131,7 +118,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:ems="10"
-        android:hint=" OO행 기준으로 입력해주세요."
+        android:hint=" 현재 역을 기준으로 입력해주세요."
         android:inputType="text"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -145,21 +132,30 @@
 
         />
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/stationchoice"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewSearch"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintWidth_percent="1" />
+    <!--    <ImageView-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:src="@drawable/stationchoice"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHeight_percent="0.1"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/imageViewSearch"-->
+    <!--        app:layout_constraintVertical_bias="0"-->
+    <!--        app:layout_constraintWidth_percent="1" />-->
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:id="@+id/buttonView"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="1"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.76"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
