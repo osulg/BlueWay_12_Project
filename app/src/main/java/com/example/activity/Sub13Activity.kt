@@ -40,17 +40,25 @@ class Sub13Activity : AppCompatActivity() {
         //Sub14 Go(소리)
         val btn_sub14s:Button=findViewById(R.id.btn_sub14s)
         btn_sub14s.setOnClickListener {
-            val intent = Intent(this,Sub14Activity::class.java)
-            startActivity(intent)
+            /*val intent = Intent(this,Sub14Activity::class.java)
+            startActivity(intent)*/
+
+            onButtonClicked(true)
         }
 
         //Sub14 Go(진동)
         val btn_sub14v:Button=findViewById(R.id.btn_sub14v)
         btn_sub14v.setOnClickListener {
-            val intent = Intent(this,Sub14Activity::class.java)
-            startActivity(intent)
+            /*val intent = Intent(this,Sub14Activity::class.java)
+            startActivity(intent)*/
+
+            onButtonClicked(false)
         }
     }
 
-
+    private fun onButtonClicked(isSoundButton:Boolean){
+        val intent = Intent(this,Sub14Activity::class.java)
+        intent.putExtra("isSoundButton", isSoundButton)
+        startActivity(intent)
+    }
 }

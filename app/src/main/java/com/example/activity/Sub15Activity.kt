@@ -24,7 +24,6 @@ class Sub15Activity : AppCompatActivity() {
                 .commit()
         }
 
-
         /*// fragment
         val fragment15=alarm()
         supportFragmentManager.beginTransaction()
