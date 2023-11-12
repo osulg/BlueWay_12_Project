@@ -6,9 +6,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import com.example.activity.R.id.btn_bsub1
 import com.example.activity.R.id.sub11frame
 import com.example.activity.R.id.sub1frame
+import kotlin.concurrent.thread
 
 class Sub11Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,6 +30,43 @@ class Sub11Activity : AppCompatActivity() {
                 .commit()
         }
 
+        thread {
+            val buttonView = findViewById<LinearLayout>(R.id.buttonView2Container)
+
+//            val finalStation=intent.getStringExtra("finalStation")
+//            val currentStation=intent.getStringExtra("currentStation")
+            val arrayStation=upDown1()
+
+            for (num in 0..97)
+            {
+                val stationButton = Button(this)
+
+                val layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+                stationButton.layoutParams = layoutParams
+                stationButton.text= arrayStation[num]
+
+                runOnUiThread {
+                    buttonView.addView(stationButton)
+                }
+
+                val currentStation=intent.getStringExtra("currentStation")
+
+                stationButton.setOnClickListener {
+                    val intent = Intent(this, Sub12Activity::class.java)
+
+                    intent.putExtra("arriveStation",arrayStation[num])
+                    intent.putExtra("currentStation",currentStation)
+                    startActivity(intent)
+                }
+
+            }
+
+        }
+
+
         /*// fragment
         val fragment11 = alarm()
         supportFragmentManager.beginTransaction()
@@ -39,13 +78,6 @@ class Sub11Activity : AppCompatActivity() {
         val btn_bsub1: Button = findViewById(R.id.btn_bsub1)
         btn_bsub1.setOnClickListener {
             finish()
-        }
-
-        //Sub12 Go
-        val btn_sub12: Button = findViewById(R.id.btn_sub12)
-        btn_sub12.setOnClickListener {
-            val intent = Intent(this, Sub12Activity::class.java)
-            startActivity(intent)
         }
 
     }

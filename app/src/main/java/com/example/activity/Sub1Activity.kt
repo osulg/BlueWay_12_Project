@@ -29,52 +29,63 @@ class Sub1Activity : AppCompatActivity() {
         val btn_search: Button = findViewById(R.id.imageViewSearchButton)
         val buttonView = findViewById<LinearLayout>(R.id.buttonView)
         btn_search.setOnClickListener {
+            buttonView.removeAllViews()
             val stationId = binding.searchStation.text.toString()
 
             thread {
                 val (totalCount,array20) = return_num(stationId)
                 for (num in 1..totalCount!!) {
                     val stationButton = Button(this)
+
+//                    val generatedId=View.generateViewId()
+//                    stationButton.id=generatedId
+
+
                     val layoutParams = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                     )
-                    thread {
-                        val resultId = main(stationId, array20[num-1])
-                        stationButton.layoutParams = layoutParams
-                        stationButton.text = resultId
-                        stationButton.id = ViewCompat.generateViewId()
-                        runOnUiThread {
-                            buttonView.addView(stationButton)
-                        }
-                    }
+
+                    val resultId = main(stationId, array20[num-1])
+                    stationButton.layoutParams = layoutParams
+                    stationButton.text = resultId
+
+//                    val clickedButtonStationNum=num-1
+
                     stationButton.setOnClickListener {
+//                            val updnLine= UpDown(stationId,clickedButtonStationNum)
                         val intent = Intent(this, Sub11Activity::class.java)
+                        intent.putExtra("currentStation",stationId)
+//                            intent.putExtra("currentStation",stationId)
                         startActivity(intent)
+
+                    }
+                    runOnUiThread {
+                        buttonView.addView(stationButton)
                     }
                 }
-
-            }
-
-            // fragment
-            val fragment1 = alarm()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.sub1frame, fragment1)
-                .addToBackStack(null)
-                .commit()
-
-            //생성된 버튼 삭제 (새로고침)
-            val refreshView: Button = findViewById(R.id.ButtonRefresh)
-            refreshView.setOnClickListener {
-                buttonView.removeAllViews()
-            }
-
-            //Main Back
-            val btn_bmain: Button = findViewById(R.id.imageViewArrow)
-            btn_bmain.setOnClickListener {
-                finish()
             }
 
         }
+
+        // fragment
+        val fragment1 = alarm()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.sub1frame, fragment1)
+            .addToBackStack(null)
+            .commit()
+
+        //생성된 버튼 삭제 (새로고침)
+        val refreshView: Button = findViewById(R.id.ButtonRefresh)
+        refreshView.setOnClickListener {
+            buttonView.removeAllViews()
+        }
+
+        //Main Back
+        val btn_bmain: Button = findViewById(R.id.imageViewArrow)
+        btn_bmain.setOnClickListener {
+            finish()
+        }
+
     }
 }

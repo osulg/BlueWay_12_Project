@@ -14,7 +14,7 @@ fun main(stationId:String,num:Int): String? {
     val urlBuilder = StringBuilder("http://swopenAPI.seoul.go.kr/api/subway/") /*URL*/
     urlBuilder.append(
         "/" + URLEncoder.encode(
-            "566945517364687439357769727444",
+            "7764737a4c7468643535684a414f50",
             "UTF-8"
         )
     ) /*인증키 (sample사용시에는 호출시 제한됩니다.)*/
@@ -77,7 +77,7 @@ fun return_num(stationId:String): Pair<Int, Array<Int>> {
     val urlBuilder = StringBuilder("http://swopenAPI.seoul.go.kr/api/subway/") /*URL*/
     urlBuilder.append(
         "/" + URLEncoder.encode(
-            "566945517364687439357769727444",
+            "7764737a4c7468643535684a414f50",
             "UTF-8"
         )
     ) /*인증키 (sample사용시에는 호출시 제한됩니다.)*/
@@ -123,12 +123,13 @@ fun return_num(stationId:String): Pair<Int, Array<Int>> {
     val parser = JsonParser()
     val jsonObject = parser.parse(sb.toString()).asJsonObject
     var totalCount = jsonObject.get("realtimeArrivalList").asJsonArray[0].asJsonObject.get("totalCount").asInt
+    var realtotalCount=totalCount
     for (num in 1..totalCount!!)
     {
         val subwayId=jsonObject.get("realtimeArrivalList").asJsonArray[num-1].asJsonObject.get("subwayId").asInt
         if (subwayId!=1001)
         {
-            totalCount=totalCount-1
+            realtotalCount=realtotalCount-1
         }
         if (subwayId==1001)
         {
@@ -138,6 +139,6 @@ fun return_num(stationId:String): Pair<Int, Array<Int>> {
 
     }
 
-    return Pair(totalCount,numbers20)
+    return Pair(realtotalCount,numbers20)
 
 }
