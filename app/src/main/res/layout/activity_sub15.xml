@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Sub15Activity">
+    tools:context=".Sub15Activity"
+    android:background="#0253A5">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/sub15frame"
@@ -13,7 +14,7 @@
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_finishalarm" />
+        tools:layout="@layout/fragment_alarm_detail" />
 
     <ImageView
         android:id="@+id/imageView24"
@@ -56,4 +57,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView24"/>
+
+    <ImageView
+        android:id="@+id/imageViewAlarm"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_access_alarm_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:tint="@color/white"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

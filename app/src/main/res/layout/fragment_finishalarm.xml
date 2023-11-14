@@ -7,16 +7,100 @@
     tools:context="Fragment.finishalarm">
 
     <ImageView
-        android:id="@+id/imageViewAlarm"
-        android:layout_width="130dp"
+        android:id="@+id/imageViewRefresh"
+        android:layout_width="80dp"
         android:layout_height="60dp"
-        android:src="@drawable/baseline_access_alarm_24"
+        android:src="@drawable/baseline_refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="1"
         app:tint="@color/white"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14"
+        app:layout_constraintWidth_percent="1"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageViewSmallArrowLeft"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:rotation="0"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:tint="@color/Blue_0253A5"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        />
+
+    <ImageView
+        android:id="@+id/imageViewSmallArrowRight"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:rotation="180"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:tint="@color/Blue_0253A5"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/currentStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 역"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintLeft_toRightOf="@id/imageViewSmallArrowLeft"
+        app:layout_constraintRight_toLeftOf="@id/imageViewSmallArrowRight"
+        />
+
+    <TextView
+        android:id="@+id/befoteStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전 역"
+        android:textColor="@color/black"
+
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintLeft_toRightOf="@id/imageViewSmallArrowLeft"
+        />
+
+    <TextView
+        android:id="@+id/afterStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다음 역"
+
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintRight_toLeftOf="@id/imageViewSmallArrowRight"
         />
 
 

@@ -33,13 +33,13 @@ class Sub22Activity : AppCompatActivity() {
             .commit()*/
 
         //Sub21 Back
-        val btn_bsub21: Button =findViewById(R.id.btn_bsub21)
+        val btn_bsub21: Button =findViewById(R.id.btn_bsub22)
         btn_bsub21.setOnClickListener {
             finish()
         }
 
         //sub23 Go
-        val btn_sub23:Button=findViewById(R.id.btn_sub23)
+        val btn_sub23:Button=findViewById(R.id.btn_sub22)
         btn_sub23.setOnClickListener {
             val intent = Intent(this,Sub23Activity::class.java)
             startActivity(intent)

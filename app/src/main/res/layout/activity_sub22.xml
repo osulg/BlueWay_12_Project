@@ -15,23 +15,92 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_alarm_detail" />
 
-    <Button
-        android:id="@+id/btn_bsub21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="53dp"
-        android:layout_marginTop="50dp"
-        android:text="Back to Sub21"
+    <ImageView
+        android:id="@+id/imageViewAlarm"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_directions_run_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"/>
 
     <Button
-        android:id="@+id/btn_sub23"
+        android:id="@+id/btn_bsub22"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@null"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"/>
+
+    <ImageView
+        android:id="@+id/imageViewArrow22"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        />
+
+    <TextView
+        android:id="@+id/textViewResgister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="123dp"
-        android:layout_marginBottom="245dp"
-        android:text="Go to Sub23"
+        android:fontFamily="sans-serif-black"
+        android:text="탑승 칸 입력"
+        android:textSize="24sp"
+        android:layout_margin="35dp"
+        android:textColor="@color/Blue_0253A5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewArrow22"
+        app:layout_constraintVertical_bias="0"
+        />
+
+    <EditText
+        android:id="@+id/searchStation22"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:hint="탑승 칸 입력 (1~10칸)"
+        android:inputType="number"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.43"
+        android:maxLength="2"
+
+        />
+
+    <Button
+        android:id="@+id/btn_sub22"
+        android:background="@color/Blue_0253A5"
+        android:text="실행"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_margin="10sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchStation22"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

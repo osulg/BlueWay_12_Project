@@ -13,27 +13,176 @@
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_finishalarm" />
+        tools:layout="@layout/fragment_waiting" />
+
+
+
 
     <Button
-        android:id="@+id/btn_bsub22"
-        android:layout_width="83dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/baseline_arrow_back_24"
-        android:backgroundTint="@color/white"
-        android:text="Back to Sub22"
+        android:id="@+id/imageViewRefresh23"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="1"
+        android:background="@null"
+        />
 
     <Button
-        android:id="@+id/btn_bmain3"
+        android:id="@+id/btn_sub23"
+        android:background="@color/white"
+        android:text="종료"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="120dp"
-        android:text="Back to Main"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_margin="30sp"
+        android:textColor="@color/Blue_0253A5"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thirdImageView"/>
+
+    <ImageView
+        android:id="@+id/imageViewAlarm"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_directions_run_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:tint="@color/white"
+        />
+
+    <ImageView
+        android:id="@+id/firstImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"
+
+        />
+
+    <ImageView
+        android:id="@+id/secondImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.45"
+        android:background="@color/white"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:visibility="visible"
+
+        />
+
+    <ImageView
+        android:id="@+id/thirdImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintWidth_percent="0.01"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        android:visibility="invisible"
+
+        />
+
+    <TextView
+        android:id="@+id/kan"
+        android:text="X 칸"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:padding="10sp"
+        android:layout_margin="10sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/thirdImageView"/>
+
+    <TextView
+        android:id="@+id/currentRideNum"
+        android:text="X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="100sp"
+        android:padding="10sp"
+        android:layout_marginTop="40sp"
+        android:textColor="@color/Blue_0253A5"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintLeft_toLeftOf="@+id/firstImageView"
+        app:layout_constraintRight_toRightOf="@+id/firstImageView"
+        app:layout_constraintBottom_toTopOf="@+id/currentRideNumString"
+        app:layout_constraintTop_toTopOf="@+id/firstImageView"/>
+
+    <TextView
+        android:id="@+id/currentRideNumString"
+        android:text="명 탑승 중"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:padding="10sp"
+        android:layout_margin="40sp"
+        android:textColor="@color/Blue_0253A5"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintLeft_toLeftOf="@+id/firstImageView"
+        app:layout_constraintRight_toRightOf="@+id/firstImageView"
+        app:layout_constraintBottom_toBottomOf="@id/firstImageView"/>
+
+    <TextView
+        android:id="@+id/soonArriveNum"
+        android:text="X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="100sp"
+        android:padding="10sp"
+        android:layout_marginTop="40sp"
+        android:textColor="@color/Blue_0253A5"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintLeft_toLeftOf="@+id/secondImageView"
+        app:layout_constraintRight_toRightOf="@+id/secondImageView"
+        app:layout_constraintBottom_toTopOf="@+id/currentRideNumString"
+        app:layout_constraintTop_toTopOf="@+id/secondImageView"/>
+
+    <TextView
+        android:id="@+id/soonArriveNumString"
+        android:text="명 곧 내림"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:padding="10sp"
+        android:layout_margin="40sp"
+        android:textColor="@color/Blue_0253A5"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintLeft_toLeftOf="@+id/secondImageView"
+        app:layout_constraintRight_toRightOf="@+id/secondImageView"
+        app:layout_constraintBottom_toBottomOf="@id/secondImageView"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

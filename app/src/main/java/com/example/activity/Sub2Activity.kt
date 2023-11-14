@@ -5,30 +5,79 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
+import com.example.activity.databinding.ActivitySub2Binding
+import kotlin.concurrent.thread
 
 class Sub2Activity : AppCompatActivity() {
+    private var mBinding: ActivitySub2Binding? = null
+    private val binding get() = mBinding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sub2)
+        mBinding = ActivitySub2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // fragment
-        val fragment2 = alarm()
+        val btn_search: Button = findViewById(R.id.imageViewSearchButton2)
+        val buttonView = findViewById<LinearLayout>(R.id.buttonView2)
+        btn_search.setOnClickListener {
+            buttonView.removeAllViews()
+            val stationId = binding.searchStation2.text.toString()
+
+            thread {
+                val (totalCount,array20) = return_num(stationId)
+                for (num in 1..totalCount!!) {
+                    val stationButton = Button(this)
+
+//                    val generatedId=View.generateViewId()
+//                    stationButton.id=generatedId
+
+
+                    val layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+
+                    val resultId = main(stationId, array20[num-1])
+                    stationButton.layoutParams = layoutParams
+                    stationButton.text = resultId
+
+//                    val clickedButtonStationNum=num-1
+
+                    stationButton.setOnClickListener {
+//                            val updnLine= UpDown(stationId,clickedButtonStationNum)
+                        val intent = Intent(this, Sub21Activity::class.java)
+                        intent.putExtra("currentStation",stationId)
+//                            intent.putExtra("currentStation",stationId)
+                        startActivity(intent)
+
+                    }
+                    runOnUiThread {
+                        buttonView.addView(stationButton)
+                    }
+                }
+            }
+
+        }
+
+        // fragment
+        val fragment1 = alarm()
         supportFragmentManager.beginTransaction()
-            .add(R.id.sub2frame, fragment2)
+            .replace(R.id.sub2frame, fragment1)
             .addToBackStack(null)
             .commit()
 
+        //생성된 버튼 삭제 (새로고침)
+        val refreshView: Button = findViewById(R.id.imageViewRefresh2)
+        refreshView.setOnClickListener {
+            buttonView.removeAllViews()
+        }
+
         //Main Back
-        val btn_bmain1: Button =findViewById(R.id.imageViewArrow)
-        btn_bmain1.setOnClickListener {
+        val btn_bmain: Button = findViewById(R.id.imageViewArrowButton)
+        btn_bmain.setOnClickListener {
             finish()
         }
 
-        //sub21 Go
-        val btn_sub21:Button=findViewById(R.id.btn_sub21)
-        btn_sub21.setOnClickListener {
-            val intent = Intent(this,Sub21Activity::class.java)
-            startActivity(intent)
-        }
     }
 }

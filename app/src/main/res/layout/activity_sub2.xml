@@ -15,18 +15,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_alarm" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sub2 Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
-        android:id="@+id/imageViewArrow"
+        android:id="@+id/imageViewArrowButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:src="@drawable/baseline_arrow_back_24"
@@ -37,6 +27,20 @@
         android:background="@null"
         app:layout_constraintVertical_bias="0"
         app:layout_constraintHorizontal_bias="0"/>
+
+    <ImageView
+        android:id="@+id/imageViewArrow2"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        />
+
 
     <ImageView
         android:id="@+id/imageViewAlarm"
@@ -50,17 +54,7 @@
         app:layout_constraintVertical_bias="0"/>
 
     <Button
-        android:id="@+id/btn_sub21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="227dp"
-        android:text="Go to Sub21"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/imageViewRefresh"
+        android:id="@+id/imageViewRefresh2"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:src="@drawable/baseline_refresh_24"
@@ -71,5 +65,94 @@
         app:layout_constraintVertical_bias="0"
         app:layout_constraintHorizontal_bias="1"
         android:background="@null"/>
+
+    <TextView
+        android:id="@+id/textViewResgister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/regi"
+        android:textColor="@color/Blue_0253A5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewArrow2"
+        app:layout_constraintVertical_bias="0" />
+
+    <ImageView
+        android:id="@+id/imageViewSearch"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewResgister"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <Button
+        android:id="@+id/imageViewSearchButton2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@null"
+        android:src="@drawable/baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewResgister"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent="0.1" />
+
+    <EditText
+        android:id="@+id/searchStation2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:hint=" 현재 역을 기준으로 입력해주세요."
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintLeft_toRightOf="@id/imageViewSearch"
+        app:layout_constraintTop_toBottomOf="@id/textViewResgister"
+
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent="0.9"
+
+        />
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:src="@drawable/stationchoice"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHeight_percent="0.1"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/imageViewSearch"-->
+    <!--        app:layout_constraintVertical_bias="0"-->
+    <!--        app:layout_constraintWidth_percent="1" />-->
+
+    <LinearLayout
+        android:id="@+id/buttonView2"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="1"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.76"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

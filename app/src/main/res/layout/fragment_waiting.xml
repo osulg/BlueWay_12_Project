@@ -7,20 +7,6 @@
     tools:context="Fragment.waiting">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintHorizontal_bias="0"
-        app:tint="@color/white"
-        />
-
-
-    <ImageView
         android:id="@+id/imageViewRefresh"
         android:layout_width="80dp"
         android:layout_height="60dp"
@@ -35,19 +21,6 @@
         />
 
     <ImageView
-        android:id="@+id/imageViewAlarm"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
-        android:src="@drawable/baseline_access_alarm_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0"
-        app:tint="@color/white"
-        />
-
-    <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -56,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewAlarm"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.14"
         app:layout_constraintWidth_percent="1"
@@ -69,7 +42,7 @@
         android:rotation="0"
         android:src="@drawable/baseline_arrow_back_24"
         app:tint="@color/Blue_0253A5"
-        app:layout_constraintTop_toBottomOf="@id/imageViewAlarm"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
         app:layout_constraintBottom_toBottomOf="@id/imageView"
         app:layout_constraintTop_toTopOf="@id/imageView"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -83,7 +56,7 @@
         android:rotation="180"
         android:src="@drawable/baseline_arrow_back_24"
         app:tint="@color/Blue_0253A5"
-        app:layout_constraintTop_toBottomOf="@id/imageViewAlarm"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
         app:layout_constraintBottom_toBottomOf="@id/imageView"
         app:layout_constraintTop_toTopOf="@id/imageView"
         app:layout_constraintRight_toRightOf="parent"
@@ -97,7 +70,7 @@
         android:text="현재 역"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/imageViewAlarm"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRefresh"
         app:layout_constraintBottom_toBottomOf="@id/imageView"
         app:layout_constraintTop_toTopOf="@id/imageView"
         app:layout_constraintLeft_toRightOf="@id/imageViewSmallArrowLeft"

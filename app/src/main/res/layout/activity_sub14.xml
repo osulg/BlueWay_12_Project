@@ -15,6 +15,19 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_waiting" />
 
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        app:tint="@color/white"
+        />
+
     <Button
         android:id="@+id/btn_bsub13"
         android:layout_width="80dp"
@@ -25,6 +38,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0"
         app:layout_constraintHorizontal_bias="0"
+        android:background="@null"
+        />
+
+    <Button
+        android:id="@+id/imageViewRefresh14"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="1"
         android:background="@null"
         />
 
@@ -90,6 +117,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/howManyNumber"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewAlarm"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:src="@drawable/baseline_access_alarm_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:tint="@color/white"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
