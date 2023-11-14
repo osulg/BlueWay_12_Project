@@ -2,16 +2,13 @@ package com.example.activity
 
 import Fragment.alarm
 import android.content.Intent
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.core.view.ViewCompat
-import com.example.activity.databinding.ActivitySub11Binding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.activity.data.BlueWayCore
 import com.example.activity.databinding.ActivitySub1Binding
+import getApiResult
 import kotlin.concurrent.thread
 
 
@@ -32,33 +29,58 @@ class Sub1Activity : AppCompatActivity() {
             buttonView.removeAllViews()
             val stationId = binding.searchStation.text.toString()
 
+//            thread {
+//                val (totalCount,array20) = return_num(stationId)
+//                for (num in 1..totalCount!!) {
+//                    val stationButton = Button(this)
+//
+////                    val generatedId=View.generateViewId()
+////                    stationButton.id=generatedId
+//
+//
+//                    val layoutParams = LinearLayout.LayoutParams(
+//                        LinearLayout.LayoutParams.MATCH_PARENT,
+//                        LinearLayout.LayoutParams.WRAP_CONTENT
+//                    )
+//
+//                    val resultId = main(stationId, array20[num-1])
+//                    stationButton.layoutParams = layoutParams
+//                    stationButton.text = resultId
+//
+////                    val clickedButtonStationNum=num-1
+//
+//                    stationButton.setOnClickListener {
+////                            val updnLine= UpDown(stationId,clickedButtonStationNum)
+//                        val intent = Intent(this, Sub11Activity::class.java)
+//                        intent.putExtra("currentStation",stationId)
+////                            intent.putExtra("currentStation",stationId)
+//                        startActivity(intent)
+//
+//                    }
+//                    runOnUiThread {
+//                        buttonView.addView(stationButton)
+//                    }
+//                }
+//            }
+
             thread {
-                val (totalCount,array20) = return_num(stationId)
-                for (num in 1..totalCount!!) {
+                val lstTrain = getApiResult(stationId)
+                for ((index, train) in lstTrain.withIndex()) {
                     val stationButton = Button(this)
-
-//                    val generatedId=View.generateViewId()
-//                    stationButton.id=generatedId
-
-
                     val layoutParams = LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
                     )
 
-                    val resultId = main(stationId, array20[num-1])
                     stationButton.layoutParams = layoutParams
-                    stationButton.text = resultId
-
-//                    val clickedButtonStationNum=num-1
-
+                    stationButton.text = "${train.trainLineNm} | 현재 역 : ${train.arvlMsg2}"
+                    stationButton.id = index
                     stationButton.setOnClickListener {
-//                            val updnLine= UpDown(stationId,clickedButtonStationNum)
                         val intent = Intent(this, Sub11Activity::class.java)
-                        intent.putExtra("currentStation",stationId)
-//                            intent.putExtra("currentStation",stationId)
+                        // 싱글톤에 저장이 필요한 값들 저장
+                        BlueWayCore.saveStationId(stationId)
+                        BlueWayCore.saveBoardingTrainData(lstTrain[stationButton.id])
                         startActivity(intent)
-
                     }
                     runOnUiThread {
                         buttonView.addView(stationButton)

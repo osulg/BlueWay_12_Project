@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import com.example.activity.R.id.btn_bsub1
 import com.example.activity.R.id.sub11frame
 import com.example.activity.R.id.sub1frame
+import com.example.activity.data.BlueWayCore
 import kotlin.concurrent.thread
 
 class Sub11Activity : AppCompatActivity() {
@@ -48,19 +49,21 @@ class Sub11Activity : AppCompatActivity() {
                 stationButton.layoutParams = layoutParams
                 stationButton.text= arrayStation[num]
 
+                stationButton.setOnClickListener {
+                    val intent = Intent(this, Sub13Activity::class.java)
+//                    intent.putExtra("arriveStation",arrayStation[num])
+//                    intent.putExtra("currentStation",currentStation)
+                    BlueWayCore.saveArrivedStationName(arrayStation[num])
+                    startActivity(intent)
+                }
+
                 runOnUiThread {
                     buttonView.addView(stationButton)
                 }
 
-                val currentStation=intent.getStringExtra("currentStation")
+//                val currentStation=intent.getStringExtra("currentStation")
 
-                stationButton.setOnClickListener {
-                    val intent = Intent(this, Sub12Activity::class.java)
 
-                    intent.putExtra("arriveStation",arrayStation[num])
-                    intent.putExtra("currentStation",currentStation)
-                    startActivity(intent)
-                }
 
             }
 

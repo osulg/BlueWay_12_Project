@@ -10,9 +10,25 @@ import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import com.example.activity.data.BlueWayCore
+import com.example.activity.database.DatabaseHelper
+import kotlin.math.abs
 
-class Sub14Activity : AppCompatActivity() {
+/**
+ * 알람 기능 - 지하철 설정 4 & 지하철 설정 5 (대기 모드)
+ */
+
+// 자식 프래그먼트의 신호 값을 받기위한 리스너 인터페이스
+interface OnDataChangeListener {
+    fun onDataRefresh()
+}
+class Sub14Activity : AppCompatActivity(), OnDataChangeListener {
+
+    lateinit var howManyNumber : TextView // 몇 정거장 전
+    lateinit var directionName : TextView // XX행 (방면)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sub14)
@@ -30,6 +46,37 @@ class Sub14Activity : AppCompatActivity() {
                 .commit()
 
         }
+
+        directionName = findViewById(R.id.directionName)
+        howManyNumber = findViewById(R.id.howManyNumber)
+
+        directionName.text = BlueWayCore.getBoardingTrainData()?.trainLineNm?.split("-")?.get(0)?.trim() ?: "XX행"
+
+        val boardingName = BlueWayCore.getBoardingTrainData()?.arvlMsg3
+        val arriveName = BlueWayCore.getArrivedStationName()
+
+        var boardingPositionIndex = 0
+        var arrivePositionIndex = 0
+
+        val dbHelper = DatabaseHelper(this@Sub14Activity)
+        val dataList = dbHelper.selectAllData()
+        for ((index, trainInfo) in dataList.withIndex()) {
+            if (trainInfo.SUBWAY_ID != 1001)
+                continue
+
+            if(trainInfo.STATN_NM == boardingName) {
+                boardingPositionIndex = index
+            }
+
+            if(trainInfo.STATN_NM == arriveName) {
+                arrivePositionIndex = index
+            }
+        }
+
+        print("탑승 열차 현재 역 : $boardingName , 도착역 : $arriveName\n")
+        print("탑승 열차 현재 역 index : $boardingPositionIndex , 도착역 index : $arrivePositionIndex\n")
+        howManyNumber.text = "${abs(arrivePositionIndex - boardingPositionIndex)}"
+
 
         /*// fragment
         val fragment14 = alarm()
@@ -50,25 +97,35 @@ class Sub14Activity : AppCompatActivity() {
             val intent = Intent(this,Sub15Activity::class.java)
             startActivity(intent)
         }
+    }
 
-        // 소리 및 진동 구현
-        val isSoundButton = intent.getBooleanExtra("isSoundButton",false)
-        var mp1: MediaPlayer = MediaPlayer.create(this,R.raw.alarmsound)
-        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+    override fun onDataRefresh() {
+        // 자식 프래그먼트로 부터 리프레쉬 버튼 클릭 신호를 받는다
+        val boardingName = BlueWayCore.getBoardingTrainData()?.arvlMsg3
+        val arriveName = BlueWayCore.getArrivedStationName()
 
-        if(isSoundButton){
-            mp1.start()
-            Toast.makeText(this, "Sound Button Clicked", Toast.LENGTH_LONG).show()
-        }
-        else{
-            //vibrator.vibrate(vibrationEffect)
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-                vibrator.vibrate(VibrationEffect.createOneShot(5000, VibrationEffect.DEFAULT_AMPLITUDE))
+        var boardingPositionIndex = 0
+        var arrivePositionIndex = 0
+
+        val dbHelper = DatabaseHelper(this@Sub14Activity)
+        val dataList = dbHelper.selectAllData()
+        for ((index, trainInfo) in dataList.withIndex()) {
+            if (trainInfo.SUBWAY_ID != 1001)
+                continue
+
+            if(trainInfo.STATN_NM == boardingName) {
+                boardingPositionIndex = index
             }
-            else{
-                vibrator.vibrate(5000)
+
+            if(trainInfo.STATN_NM == arriveName) {
+                arrivePositionIndex = index
             }
-            Toast.makeText(this, "Vibration Button Clicked", Toast.LENGTH_LONG).show()
         }
+
+        print("탑승 열차 현재 역 : $boardingName , 도착역 : $arriveName\n")
+        print("탑승 열차 현재 역 index : $boardingPositionIndex , 도착역 index : $arrivePositionIndex\n")
+        howManyNumber.text = "${abs(arrivePositionIndex - boardingPositionIndex)}"
+
+
     }
 }

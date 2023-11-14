@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
+/**
+ * 알람 기능 - 지하철 설정 6 (알람 활성화)
+ */
 class Sub15Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +37,9 @@ class Sub15Activity : AppCompatActivity() {
         //Main Go
         val btn_main2: Button =findViewById(R.id.btn_bmain2)
         btn_main2.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finishAffinity()
         }
     }
 }
