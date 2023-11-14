@@ -78,6 +78,7 @@ class Sub14Activity : AppCompatActivity(), OnDataChangeListener {
         howManyNumber.text = "${abs(arrivePositionIndex - boardingPositionIndex)}"
 
 
+
         /*// fragment
         val fragment14 = alarm()
         supportFragmentManager.beginTransaction()
